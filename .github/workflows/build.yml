@@ -21,8 +21,11 @@ jobs:
         with:
           dotnet-version: '6.0.x'
 
-      - name: Restore dependencies
-        run: dotnet restore JellyfinRemoteDownload.csproj
+      - name: Clear NuGet cache (optional)
+        run: dotnet nuget locals all --clear
+
+      - name: Restore dependencies using nuget.config
+        run: dotnet restore JellyfinRemoteDownload.csproj --configfile nuget.config --verbosity detailed
 
       - name: Build
         run: dotnet build JellyfinRemoteDownload.csproj --configuration Release --no-restore
