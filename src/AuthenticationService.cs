@@ -3,7 +3,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 
-namespace JellyfinRemoteDownloadPlugin
+namespace JellyfinRemoteDownload
 {
     public class AuthenticationService
     {

@@ -1,6 +1,6 @@
 using MediaBrowser.Model.Plugins;
 
-namespace JellyfinRemoteDownloadPlugin
+namespace JellyfinRemoteDownload
 {
     public class PluginConfiguration : BasePluginConfiguration
     {

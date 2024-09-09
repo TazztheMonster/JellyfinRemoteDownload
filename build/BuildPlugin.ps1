@@ -1,1 +1,1 @@
-dotnet publish JellyfinRemoteDownloadPlugin.csproj -c Release -o ../build_output
+dotnet publish JellyfinRemoteDownload.csproj -c Release -o ../build_output

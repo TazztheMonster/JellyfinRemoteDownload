@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
-    <AssemblyName>JellyfinRemoteDownloadPlugin</AssemblyName>
-    <RootNamespace>JellyfinRemoteDownloadPlugin</RootNamespace>
+    <AssemblyName>JellyfinRemoteDownload</AssemblyName>
+    <RootNamespace>JellyfinRemoteDownload</RootNamespace>
     <OutputType>Library</OutputType>
   </PropertyGroup>
 

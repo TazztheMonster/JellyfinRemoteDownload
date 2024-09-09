@@ -3,7 +3,7 @@ using MediaBrowser.Model.Plugins;
 using MediaBrowser.Model.Serialization;
 using System;
 
-namespace JellyfinRemoteDownloadPlugin
+namespace JellyfinRemoteDownload
 {
     public class Plugin : BasePlugin<PluginConfiguration>, IHasWebPages
     {
