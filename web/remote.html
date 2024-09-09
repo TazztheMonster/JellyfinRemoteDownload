@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Remote Jellyfin Download</title>
+</head>
+<body>
+    <h1>Remote Jellyfin Download</h1>
+
+    <form id="loginForm">
+        <label for="apiUrl">Jellyfin API URL:</label>
+        <input type="text" id="apiUrl" name="apiUrl" required>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <button type="submit">Connect</button>
+    </form>
+
+    <div id="seriesList"></div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', async function (event) {
+            event.preventDefault();
+
+            const apiUrl = document.getElementById('apiUrl').value;
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            const response = await fetch(`/emby/Plugins/remotedownload/Authenticate`, {
+                method: 'POST',
+                body: JSON.stringify({ apiUrl, username, password }),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+
+            const seriesList = await response.json();
+            document.getElementById('seriesList').innerHTML = seriesList.map(series => `
+                <div>
+                    <h2>${series.Name}</h2>
+                    <button onclick="downloadSeries('${series.Id}', '${series.Name}')">Download Series</button>
+                </div>
+            `).join('');
+        });
+
+        async function downloadSeries(seriesId, seriesName) {
+            await fetch(`/emby/Plugins/remotedownload/DownloadSeries?seriesId=${seriesId}&seriesName=${seriesName}`, {
+                method: 'POST'
+            });
+        }
+    </script>
+</body>
+</html>

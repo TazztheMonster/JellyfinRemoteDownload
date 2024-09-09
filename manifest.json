@@ -1,0 +1,14 @@
+{
+    "name": "JellyfinRemoteDownload",
+    "guid": "com.example.jellyfin.remotedownload",
+    "version": "1.0.0",
+    "description": "Download videos and series from other Jellyfin instances",
+    "author": "Tazz",
+    "targetAbi": "10.8.0.0",
+    "id": "JellyfinRemoteDownloadPlugin",
+    "category": "Playback",
+    "icon": "https://path.to/your/icon.png",
+    "image": "https://path.to/your/image.png",
+    "homepage": "https://github.com/dein-benutzername/JellyfinRemoteDownloadPlugin",
+    "assembly": "JellyfinRemoteDownloadPlugin.dll"
+}  
