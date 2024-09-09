@@ -1,15 +1,14 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
+    <LangVersion>9.0</LangVersion>
     <AssemblyName>JellyfinRemoteDownload</AssemblyName>
-    <RootNamespace>JellyfinRemoteDownload</RootNamespace>
-    <OutputType>Library</OutputType>
+    <Authors>Dein Name</Authors>
+    <Company>Dein Unternehmen</Company>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Jellyfin.Plugin.Common" Version="10.8.0" />
+    <PackageReference Include="Jellyfin.Plugin.Common" Version="10.7.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
-
 </Project>
