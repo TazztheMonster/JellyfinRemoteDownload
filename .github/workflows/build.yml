@@ -22,18 +22,18 @@ jobs:
           dotnet-version: '6.0.x'
 
       - name: Restore dependencies
-        run: dotnet restore JellyfinRemoteDownloadPlugin.csproj
+        run: dotnet restore JellyfinRemoteDownload.csproj
 
       - name: Build
-        run: dotnet build JellyfinRemoteDownloadPlugin.csproj --configuration Release --no-restore
+        run: dotnet build JellyfinRemoteDownload.csproj --configuration Release --no-restore
 
       - name: Publish
-        run: dotnet publish JellyfinRemoteDownloadPlugin.csproj --configuration Release --output ./publish --no-build
+        run: dotnet publish JellyfinRemoteDownload.csproj --configuration Release --output ./publish --no-build
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: JellyfinRemoteDownloadPlugin
+          name: JellyfinRemoteDownload
           path: ./publish
 
   release:
